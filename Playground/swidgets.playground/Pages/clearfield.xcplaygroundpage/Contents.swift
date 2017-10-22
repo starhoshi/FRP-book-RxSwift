@@ -20,7 +20,7 @@ textField.text = "Hello"
 
 let clearButton = UIButton()
 clearButton.setTitleColor(.blue, for: .normal)
-clearButton.setTitle("OK", for: .normal)
+clearButton.setTitle("clear", for: .normal)
 clearButton.frame = CGRect(x: 10, y: 210, width: 100, height: 30)
 
 view.addSubview(textField)
