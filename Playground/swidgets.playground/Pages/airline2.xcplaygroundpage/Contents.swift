@@ -10,7 +10,6 @@ let view = UIView()
 view.backgroundColor = .white
 view.frame = CGRect(x: 0, y: 0, width: 300, height: 500)
 
-PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.liveView = view
 
 let depDatePicker = UIDatePicker()
