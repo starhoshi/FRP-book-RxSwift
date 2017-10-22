@@ -4,11 +4,42 @@ import RxCocoa
 import UIKit
 import PlaygroundSupport
 
+let disposeBag = DisposeBag()
+
 let view = UIView()
 view.backgroundColor = .white
-view.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+view.frame = CGRect(x: 0, y: 0, width: 300, height: 500)
 
+PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.liveView = view
+
+let depDatePicker = UIDatePicker()
+depDatePicker.frame = CGRect(x: 0, y: 0, width: 300, height: 200)
+
+let retDatePicker = UIDatePicker()
+retDatePicker.date = depDatePicker.date
+retDatePicker.frame = CGRect(x: 0, y: 210, width: 300, height: 200)
+
+let okButton = UIButton()
+okButton.setTitleColor(.blue, for: .normal)
+okButton.setTitle("OK", for: .normal)
+okButton.frame = CGRect(x: 10, y: 410, width: 100, height: 30)
+
+view.addSubview(depDatePicker)
+view.addSubview(retDatePicker)
+view.addSubview(okButton)
+
+var d = depDatePicker.rx.date.asObservable()
+
+let valid = Observable.combineLatest(depDatePicker.rx.date.asObservable(),
+                                     retDatePicker.rx.date.asObservable())
+                            .map { $0.0 < $0.1 }
+
+valid.subscribe(onNext: { valid in
+    okButton.isEnabled = valid
+    okButton.alpha = valid ? 1.0 : 0.5
+})
+    .disposed(by: disposeBag)
 
 
 //import javax.swing.*;
