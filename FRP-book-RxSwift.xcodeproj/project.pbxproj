@@ -17,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		B1F54E2ADC8444FF9595241C /* Pods-FRP-book-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FRP-book-RxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-FRP-book-RxSwift/Pods-FRP-book-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
+		E323F4F91F9C6ACB002600A4 /* swidgets.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = swidgets.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E393A5951F9BAE5E000D90FA /* FRP-book-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FRP-book-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E393A5981F9BAE5E000D90FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E393A59A1F9BAE5E000D90FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		E393A58C1F9BAE5E000D90FA = {
 			isa = PBXGroup;
 			children = (
+				E3CFE5FD1F9C797C0041B74B /* Playground */,
 				E393A5971F9BAE5E000D90FA /* FRP-book-RxSwift */,
 				E393A5961F9BAE5E000D90FA /* Products */,
 				DB664667E9F7108467CB5E92 /* Pods */,
@@ -86,6 +88,14 @@
 				E393A5A41F9BAE5E000D90FA /* Info.plist */,
 			);
 			path = "FRP-book-RxSwift";
+			sourceTree = "<group>";
+		};
+		E3CFE5FD1F9C797C0041B74B /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				E323F4F91F9C6ACB002600A4 /* swidgets.playground */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
