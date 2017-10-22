@@ -3,5 +3,6 @@
     <pages>
         <page name='add'/>
         <page name='airline1'/>
+        <page name='airline2'/>
     </pages>
 </playground>
