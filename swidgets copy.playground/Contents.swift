@@ -2,6 +2,7 @@
   
 import UIKit
 import PlaygroundSupport
+import RxSwift
 
 class MyViewController : UIViewController {
     override func loadView() {
