@@ -7,5 +7,6 @@
         <page name='airline2'/>
         <page name='clearfield'/>
         <page name='label'/>
+        <page name='reverse'/>
     </pages>
 </playground>
