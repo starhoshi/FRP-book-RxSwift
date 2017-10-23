@@ -6,5 +6,6 @@
         <page name='airline1'/>
         <page name='airline2'/>
         <page name='clearfield'/>
+        <page name='label'/>
     </pages>
 </playground>
