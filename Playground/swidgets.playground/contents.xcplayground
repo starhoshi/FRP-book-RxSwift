@@ -8,5 +8,6 @@
         <page name='clearfield'/>
         <page name='label'/>
         <page name='reverse'/>
+        <page name='gamechat'/>
     </pages>
 </playground>
