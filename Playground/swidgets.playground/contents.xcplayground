@@ -9,5 +9,6 @@
         <page name='label'/>
         <page name='reverse'/>
         <page name='gamechat'/>
+        <page name='redgreen'/>
     </pages>
 </playground>
