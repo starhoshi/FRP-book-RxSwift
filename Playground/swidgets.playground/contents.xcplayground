@@ -10,5 +10,6 @@
         <page name='reverse'/>
         <page name='gamechat'/>
         <page name='redgreen'/>
+        <page name='translate'/>
     </pages>
 </playground>
