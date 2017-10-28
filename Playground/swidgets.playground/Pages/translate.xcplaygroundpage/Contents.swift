@@ -29,9 +29,7 @@ view.addSubview(textField)
 view.addSubview(translateButton)
 view.addSubview(label)
 
-// この書き方じゃダメっぽい
-let sLatin = Observable.combineLatest(translateButton.rx.tap, textField.rx.text.asObservable())
-    .map { $0.1 }
+let sLatin = translateButton.rx.tap.withLatestFrom(textField.rx.text.asObservable())
     .filter { $0 != nil}
     .map { $0!}
     .map { $0.split(separator: " ") }
