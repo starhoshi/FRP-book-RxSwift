@@ -12,6 +12,6 @@
         <page name='redgreen'/>
         <page name='translate'/>
         <page name='spinner'/>
-        <page name='readfile'/>
+        <page name='transaction'/>
     </pages>
 </playground>

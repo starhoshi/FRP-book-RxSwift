@@ -12,30 +12,47 @@ view.frame = CGRect(x: 0, y: 0, width: 300, height: 500)
 
 PlaygroundPage.current.liveView = view
 
-let redButton = UIButton()
-redButton.setTitleColor(.blue, for: .normal)
-redButton.setTitle("red", for: .normal)
-redButton.frame = CGRect(x: 10, y: 10, width: 200, height: 30)
+do {
+//    let value = PublishSubject<Int>()
+    let value = BehaviorSubject<Int>(value: 0)
 
-let greenButton = UIButton()
-greenButton.setTitleColor(.blue, for: .normal)
-greenButton.setTitle("green", for: .normal)
-greenButton.frame = CGRect(x: 10, y: 110, width: 200, height: 30)
+    let label = UILabel()
+    label.frame = CGRect(x: 10, y: 210, width: 100, height: 30)
+    label.text = ""
 
-let label = UILabel()
-label.frame = CGRect(x: 10, y: 210, width: 100, height: 30)
-label.text = "Hello"
+    value
+        .map { $0.description }
+        .bind(to: label.rx.text)
 
-view.addSubview(redButton)
-view.addSubview(greenButton)
-view.addSubview(label)
+    let plusButton = UIButton()
+    plusButton.setTitleColor(.blue, for: .normal)
+    plusButton.setTitle("+", for: .normal)
+    plusButton.frame = CGRect(x: 10, y: 10, width: 200, height: 30)
 
-let sRed = redButton.rx.tap.map { "Red" }
-let sGreen = greenButton.rx.tap.map { "Green" }
-let sColor = Observable.of(sRed, sGreen).merge()
-let color = BehaviorSubject(value: "")
-sColor.subscribe(color)
-color.bind(to: label.rx.text)
+    let minusButton = UIButton()
+    minusButton.setTitleColor(.blue, for: .normal)
+    minusButton.setTitle("-", for: .normal)
+    minusButton.frame = CGRect(x: 10, y: 110, width: 200, height: 30)
+
+    view.addSubview(label)
+    view.addSubview(plusButton)
+    view.addSubview(minusButton)
+
+    let sPlusDelta = plusButton.rx.tap.map { 1 }
+    let sMinusDelta = minusButton.rx.tap.map { -1 }
+    let sDelta = Observable.merge(sPlusDelta, sMinusDelta)
+    let sUpdate = sDelta.withLatestFrom(value) { d, v in
+        return d + v
+    }
+    sUpdate.bind(to: value)
+}
+
+//let sRed = redButton.rx.tap.map { "Red" }
+//let sGreen = greenButton.rx.tap.map { "Green" }
+//let sColor = Observable.of(sRed, sGreen).merge()
+//let color = BehaviorSubject(value: "")
+//sColor.subscribe(color)
+//color.bind(to: label.rx.text)
 
 
 //import javax.swing.*;
