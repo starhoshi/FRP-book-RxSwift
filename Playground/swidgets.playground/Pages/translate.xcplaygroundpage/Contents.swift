@@ -39,7 +39,6 @@ let latin = BehaviorSubject(value: "")
 sLatin.subscribe(latin)
 latin.bind(to: label.rx.text)
 
-
 //import javax.swing.*;
 //import java.awt.*;
 //import java.awt.event.*;
