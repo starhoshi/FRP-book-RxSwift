@@ -11,7 +11,8 @@
         <page name='gamechat'/>
         <page name='redgreen'/>
         <page name='translate'/>
-        <page name='spinner'/>
         <page name='transaction'/>
+        <page name='spinner'/>
+        <page name='nonegative'/>
     </pages>
 </playground>
