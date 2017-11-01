@@ -29,19 +29,21 @@ view.addSubview(aTextField)
 view.addSubview(bTextField)
 view.addSubview(sumLabel)
 
-let aCell = aTextField.rx.text.orEmpty
+let a = aTextField.rx.text.orEmpty
     .asObservable()
     .map { Int($0) }
     .map { $0 ?? 0}
 
-let bCell = bTextField.rx.text.orEmpty
+let b = bTextField.rx.text.orEmpty
     .asObservable()
     .map { Int($0) }
     .map { $0 ?? 0}
 
-Observable.combineLatest(aCell, bCell)
+let sum = Observable.combineLatest(a, b)
     .map { $0.0 + $0.1}
     .map { $0.description }
+
+sum
     .bind(to: sumLabel.rx.text)
     .disposed(by: disposeBag)
 

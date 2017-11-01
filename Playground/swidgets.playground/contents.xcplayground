@@ -2,7 +2,6 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='description'/>
-        <page name='add'/>
         <page name='airline1'/>
         <page name='airline2'/>
         <page name='clearfield'/>
@@ -14,5 +13,6 @@
         <page name='transaction'/>
         <page name='spinner'/>
         <page name='nonegative'/>
+        <page name='add'/>
     </pages>
 </playground>
